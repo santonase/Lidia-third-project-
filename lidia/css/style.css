@@ -53,9 +53,11 @@ body {
 
 /* Header */
 .header {
-    position: sticky;
-    top: 0;
+    /* position: sticky;
+    top: 0; */
     padding: 77px;
+    position: relative;
+    z-index: 50;
 }
 .header__container {
     display: flex;
@@ -104,8 +106,16 @@ body {
     padding-bottom: 40px;
     position: relative;
 }
+
 .hero__container {
     display: flex;
+}
+
+@media (max-width: 1200px){
+    .hero__container {
+        row-gap: 30px;
+        flex-direction: column;
+    }
 }
 
 .hero__container::before,
@@ -137,15 +147,42 @@ body {
 .content-hero {
     display: grid;
     align-content: start;
-    justify-items: start;
     gap: 30px;
+    position: relative;
+    z-index: 2 ;
 }
+
+@media (min-width: 1200px) {
+    .content-hero {
+        padding-right: 20px;
+    }
+}
+
+@media (min-width: 479.98px) {
+    .content-hero {
+        justify-items: start;
+    }
+}
+
 .content__title {
     font-size: 76px;
     line-height: 117.105263%; /* 89/76 */
     letter-spacing: -4px;
     font-weight: 800;
     color: #181E4B;
+    text-shadow: 0 0 8px #fff;
+}
+
+@media (max-width: 991.98px) {
+    .content__title {
+        font-size: 55px;
+    }
+}
+
+@media (max-width: 479.98px) {
+    .content__title {
+        font-size: 42px;
+    }
 }
 
 .content__title > a {
@@ -179,6 +216,7 @@ body {
     position: relative;
     top: 0;
     transition: all 0.3s;
+    text-align: center;
 }
 
 .content-hero__button:hover {
@@ -197,6 +235,7 @@ body {
     grid-template-rows: repeat(2, 1fr);
     gap: 27px;
 }
+
 .images-hero__item {
 }
 
@@ -214,14 +253,22 @@ body {
 
 .images-hero__item--02 {
 }
+
 .images-hero__item--03 {
     grid-row: span 2;
     align-self: center;
     justify-self: end;
     padding-bottom: 10px;
 }
+
 .images-hero__item--04 {
    
     align-self: end;
     justify-self: end;
+}
+
+@media (max-width: 1200px) {
+    .images-hero {
+        align-self: center;
+    }
 }
